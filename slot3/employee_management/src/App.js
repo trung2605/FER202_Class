@@ -7,6 +7,7 @@ import Exercise5 from './Exercise5';
 import Exercise6 from './Exercise6';
 import Exercise7 from './Exercise7';
 import Exercise8 from './Exercise8';
+import Ex from './Ex';
 
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
       <Exercise7 employees={employees} />
       <hr />
       <Exercise8 employees={employees} />
+      <hr />
+      <Ex />
     </div>
   );
 }

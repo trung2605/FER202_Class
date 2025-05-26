@@ -2,8 +2,9 @@ import React from 'react';
 
 const Exercise7 = ({employees}) => {
 
-  const sortedEmployees = [...employees].sort((a, b) => {
-    const departmentComparison = a.department.localeCompare(b.department);
+  const sortedEmployees = [...employees].sort((a, b) => { //spread => array which is copied from origin
+    const departmentComparison = a.department.localeCompare(b.department); 
+    console.log(departmentComparison);
     if (departmentComparison !== 0) {
       return departmentComparison;
     }

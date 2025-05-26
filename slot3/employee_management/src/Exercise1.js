@@ -2,6 +2,7 @@ import React from 'react';
 
 const Exercise1 = () => {
   const employee = { name: "John Doe", age: 30, department: "IT" };
+
   const { name, age, department } = employee;
 
   return (
@@ -14,3 +15,4 @@ const Exercise1 = () => {
 };
 
 export default Exercise1;
+ư

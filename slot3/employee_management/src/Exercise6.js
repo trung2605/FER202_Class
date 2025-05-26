@@ -2,7 +2,7 @@ import React from 'react';
 
 const Exercise6 = ({employees}) => {
 
-  const itEmployees = employees.filter(employee => employee.department === "IT");
+  const itEmployees = employees.filter(employee => employee.department === "IT"); //=> array
 
   return (
     <div>
