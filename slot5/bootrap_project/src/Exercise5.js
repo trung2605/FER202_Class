@@ -106,6 +106,7 @@ function Exercise5() {
       {/* Students Detail Section */}
       <Container className="my-5">
         <h2 className="text-center mb-5">Students Detail</h2>
+        
         <Row className="justify-content-center">
           {/* Card 1 */}
           <Col md={6} lg={4} className="mb-4 d-flex justify-content-center">
@@ -201,6 +202,7 @@ function Exercise5() {
             </Card>
           </Col>
         </Row>
+
         <Row className="justify-content-center">
           {/* Card 3 */}
           <Col md={6} lg={4} className="mb-4 d-flex justify-content-center">
@@ -292,6 +294,7 @@ function Exercise5() {
             </Card>
           </Col>
         </Row>
+
       </Container>
 
       {/* Footer Section */}
