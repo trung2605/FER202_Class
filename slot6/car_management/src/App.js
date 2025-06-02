@@ -7,7 +7,7 @@ function App() {
   return (
     <Container className="my-5"> 
       <h1 className="mb-4">Cards Columns</h1> 
-      <Row className="justify-content-center"> 
+      <Row className="justify-content-center">   
         <Col lg={4} md={6} xs={12} className="mb-4">
           <CarCard
             imageSrc={carImage} 
