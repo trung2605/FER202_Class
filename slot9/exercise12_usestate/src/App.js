@@ -18,14 +18,14 @@ function App() {
       <Ex2 />
       <h1>Ex3</h1>
        <Ex3 />
-      {/*<h1>Ex4</h1>
+      <h1>Ex4</h1>
       <Ex4 />
       <h1>Ex5</h1>
       <Ex5 />
       <h1>Ex6</h1>
       <Ex6 />
       <h1>Ex7</h1>     
-      <Ex7 />   */}
+      <Ex7 />  
     </div>
   );
 }
