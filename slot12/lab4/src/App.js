@@ -1,12 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 import QuizApp from './QuizApp';
+import { QuizProvider } from './QuizContext'; 
 function App() {
   return (
-    <div className="App">
-     <QuizApp />
-    </div>
+    <QuizProvider>
+      <QuizApp />
+    </QuizProvider>
   );
 }
-
 export default App;

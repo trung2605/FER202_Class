@@ -11,3 +11,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Thêm keyframes cho spinner */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin 1.5s linear infinite;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Kéo xuống một chút */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards; /* 0.8s, chậm hơn và mượt hơn */
+}
