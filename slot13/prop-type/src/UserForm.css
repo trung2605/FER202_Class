@@ -1,0 +1,123 @@
+.form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #c0392b; /* Màu đỏ nổi bật như trong ảnh */
+  margin-bottom: 25px;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.error-message-box {
+  background-color: #ffebeb;
+  border: 1px solid #ff0000;
+  color: #ff0000;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box; /* Đảm bảo padding không làm tăng chiều rộng */
+  transition: border-color 0.2s ease-in-out;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.input-error {
+  border-color: #ff0000 !important; /* Quan trọng để override focus */
+  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25) !important;
+}
+
+.error-text {
+  color: #ff0000;
+  font-size: 0.9em;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Khoảng cách giữa icon và chữ */
+}
+
+/* Kiểu cho radio buttons */
+.radio-group {
+  display: flex;
+  gap: 20px;
+}
+
+.radio-group label {
+  font-weight: normal; /* Không in đậm label của radio */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Kiểu cho checkbox */
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: normal;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  /* Thay đổi màu checkbox nếu muốn, cần phức tạp hơn với appearance/accent-color */
+  accent-color: #007bff; /* Thay đổi màu mặc định của checkbox */
+}
+
+.submit-button {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}

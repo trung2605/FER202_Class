@@ -21,7 +21,6 @@ const QuizAppContent = () => {
     handleRestartQuiz // Cần hàm restart để sử dụng khi quay lại từ AddQuestionForm
   } = useQuiz();
 
-  // Thêm state để quản lý chế độ xem (quiz hay add question)
   const [viewMode, setViewMode] = useState('quiz'); // 'quiz' hoặc 'addQuestion'
 
   if (isLoading) {
@@ -71,7 +70,10 @@ const QuizAppContent = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center p-4 sm:p-6 lg:p-8 font-inter">
+    <div className="min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8 font-inter
+                    bg-gradient-to-br from-blue-500 to-purple-600 /* Giữ nguyên gradient hiện tại làm nền */
+                    bg-size-200 /* Đảm bảo background đủ lớn để di chuyển */
+                    animate-gradient-move">
       <div className="bg-white rounded-3xl shadow-2xl p-6 sm:p-8 lg:p-10 w-full max-w-3xl border border-blue-200 transform transition-all duration-300 ease-in-out hover:scale-[1.01]">
         <h1 className="text-4xl sm:text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-700 mb-8 drop-shadow-md">
           🧠 Awesome Quiz! 🚀
@@ -128,7 +130,6 @@ const QuizAppContent = () => {
   );
 };
 
-// Vẫn là Wrapper để cung cấp Context
 const QuizApp = () => (
   <QuizProvider>
     <QuizAppContent />

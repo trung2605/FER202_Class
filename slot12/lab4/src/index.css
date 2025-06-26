@@ -45,3 +45,35 @@ code {
 .animate-fade-in {
   animation: fadeIn 0.8s ease-out forwards; /* 0.8s, chậm hơn và mượt hơn */
 }
+
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%; /* Bắt đầu từ bên trái */
+  }
+  50% {
+    background-position: 100% 50%; /* Di chuyển sang bên phải */
+  }
+  100% {
+    background-position: 0% 50%; /* Quay lại ban đầu */
+  }
+}
+
+/* Hoặc một kiểu chuyển màu khác, mượt mà hơn */
+@keyframes color-change-gradient {
+  0% {
+    background-image: linear-gradient(135deg, #a855f7, #6366f1); /* Purple to Indigo */
+  }
+  25% {
+    background-image: linear-gradient(135deg, #6366f1, #3b82f6); /* Indigo to Blue */
+  }
+  50% {
+    background-image: linear-gradient(135deg, #3b82f6, #06b6d4); /* Blue to Cyan */
+  }
+  75% {
+    background-image: linear-gradient(135deg, #06b6d4, #a855f7); /* Cyan to Purple */
+  }
+  100% {
+    background-image: linear-gradient(135deg, #a855f7, #6366f1); /* Back to Purple to Indigo */
+  }
+}

@@ -100,6 +100,7 @@ export const QuizProvider = ({ children }) => {
     fetchQuestions();
   }, [fetchQuestions]); 
 
+  // Hàm xử lý khi người dùng chọn đáp án
   const handleAnswerOptionClick = (selectedOption) => {
     const currentQuestionData = questions[currentQuestionIndex];
     if (selectedOption === currentQuestionData.answer) {
@@ -113,6 +114,7 @@ export const QuizProvider = ({ children }) => {
     }
   };
 
+  // Hàm để khởi động lại quiz
   const handleRestartQuiz = () => {
     setCurrentQuestionIndex(0);
     setScore(0);
@@ -124,7 +126,7 @@ export const QuizProvider = ({ children }) => {
   // Hàm mới để thêm câu hỏi
   const addQuestion = (newQuestionData) => {
     const newQuestion = {
-      id: `user-${Date.now()}`, // ID duy nhất cho câu hỏi do người dùng tạo
+      id: `user-${Date.now()}`,     
       question: newQuestionData.question,
       options: shuffleArray([...newQuestionData.incorrect_answers, newQuestionData.correct_answer]),
       answer: newQuestionData.correct_answer,
