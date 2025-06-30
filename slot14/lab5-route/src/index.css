@@ -11,3 +11,182 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* src/index.css hoặc src/App.css */
+
+/* Custom quiz container */
+.quiz-container {
+  max-width: 800px; /* Giới hạn chiều rộng để trông đẹp hơn */
+  margin: 0 auto;
+  min-height: 550px; /* Tăng chiều cao tối thiểu để chứa tất cả các phần tử, điều chỉnh nếu cần */
+  position: relative; /* Quan trọng cho animation absolute positioning */
+  padding-bottom: 50px; /* Thêm padding dưới để có không gian cho nút điều hướng */
+}
+
+/* Base style cho card câu hỏi */
+.quiz-question-card {
+  border: none;
+  background-color: #ffffff;
+  min-height: 250px; /* Đảm bảo card có chiều cao đủ */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* CSS Transition cho animation */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  width: calc(100% - 40px); /* Bằng chiều rộng container trừ padding */
+  left: 20px; /* Căn giữa với padding 20px mỗi bên của container */
+  box-sizing: border-box; /* Đảm bảo padding không làm tăng tổng chiều rộng */
+}
+
+
+/* Animation khi câu hỏi mới xuất hiện (fade-in) */
+.quiz-question-card.fade-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Animation khi câu hỏi cũ biến mất (fade-out) */
+.quiz-question-card.fade-out {
+  opacity: 0;
+  transform: translateX(-100%); /* Di chuyển sang trái và biến mất */
+}
+
+/* Animation khi quay lại câu hỏi trước (fade-out-reverse) */
+.quiz-question-card.fade-out-reverse {
+  opacity: 0;
+  transform: translateX(100%); /* Di chuyển sang phải và biến mất */
+}
+
+/* Khi không có class animation nào, đảm bảo nó hiển thị bình thường */
+.quiz-question-card:not(.fade-in):not(.fade-out):not(.fade-out-reverse) {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Hiệu ứng hover cho nút đáp án */
+.quiz-option-btn {
+  transition: all 0.2s ease-in-out;
+}
+
+.quiz-option-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Icon (nếu bạn dùng Bootstrap Icons, cần cài đặt và import) */
+/* import 'bootstrap-icons/font/bootstrap-icons.css'; */
+
+/* Căn chỉnh lại vị trí của feedback và navigation để không bị ảnh hưởng bởi absolute positioning của card */
+/* Quan trọng: Các giá trị top/margin-top này sẽ phụ thuộc vào chiều cao của card câu hỏi và các phần tử phía trên */
+.quiz-feedback-alert { /* Thêm class này vào Alert của feedback trong Quiz.js */
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    z-index: 10; /* Đảm bảo nó nằm trên card */
+    top: 420px; /* Khoảng cách từ trên xuống, điều chỉnh phù hợp với min-height của card + top của card */
+    width: calc(100% - 40px); /* Bằng chiều rộng container trừ padding */
+    left: 20px;
+}
+
+.quiz-navigation {
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    z-index: 10;
+    top: 500px; /* Khoảng cách từ trên xuống, sau alert feedback */
+    width: calc(100% - 40px); /* Bằng chiều rộng container trừ padding */
+    left: 20px;
+}
+
+/* Style cho kết quả quiz */
+.quiz-container.text-center.my-5.p-4.border.rounded.shadow-lg.bg-light {
+  min-height: 300px; /* Đảm bảo màn hình kết quả cũng có chiều cao tốt */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* src/index.css hoặc src/App.css */
+
+/* Custom Slider Container */
+.custom-slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Đảm bảo chỉ nhìn thấy 1 slide mỗi lần */
+  border-radius: 8px; /* Bo góc cho slider */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Bóng đổ nhẹ */
+}
+
+/* Base slide style */
+.custom-slide {
+  position: absolute; /* Đặt các slide chồng lên nhau */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Chiều cao bằng container */
+  opacity: 0; /* Mặc định ẩn */
+  transition: opacity 0.7s ease-in-out; /* Hiệu ứng fade */
+  /* transform: translateX(100%); Tùy chọn nếu muốn slide effect thay vì fade */
+}
+
+.custom-slide.active {
+  opacity: 1; /* Slide hiện tại hiển thị */
+  /* transform: translateX(0); Tùy chọn nếu muốn slide effect */
+}
+
+/* Controls (mũi tên next/prev) */
+.custom-slide-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 24px;
+  border-radius: 5px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.custom-slide-control:hover {
+  opacity: 1;
+}
+
+.custom-slide-control.prev {
+  left: 10px;
+}
+
+.custom-slide-control.next {
+  right: 10px;
+}
+
+/* Indicators (chấm chỉ báo) */
+.custom-slide-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 8px; /* Khoảng cách giữa các chấm */
+}
+
+.custom-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-indicator.active {
+  background-color: #007bff; /* Màu sắc của chấm active */
+  border: 1px solid #007bff; /* Viền để nổi bật hơn */
+  width: 12px; /* Lớn hơn một chút */
+  height: 12px;
+}

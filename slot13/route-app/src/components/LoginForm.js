@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from './AuthContext';
-import { loginUser } from './authApi';
+import { useAuth } from '../AuthContext';
+import { loginUser } from '../authApi';
 import './LoginForm.css'; // Tạo file CSS này
 
 function LoginForm() {
